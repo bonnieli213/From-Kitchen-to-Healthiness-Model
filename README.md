@@ -18,8 +18,7 @@ We removed all brackets from the "nutrition" column and divided the entire nutri
 
 ## Baseline Model
 
-
-
+we use Linear Regression to build our baseline model with 10 features, including minutes,	n_steps, n_ingredients,	calories,	total_fat_(PDV), sugar_(PDV), sodium_(PDV), protein_(PDV), saturated_fat_(PDV), and carbohydrates_(PDV). Minutes,	n_steps, n_ingredients,	and calories are quantitative discrete variables, while total_fat_(PDV), sugar_(PDV), sodium_(PDV), protein_(PDV), saturated_fat_(PDV), and carbohydrates_(PDV) are quantitative continuous variables. We don't believe our current model is good, so we haven't performed any transformer and our performance metrics is low. (performance metrics missing)
 
 
 ### Univariate Analysis
