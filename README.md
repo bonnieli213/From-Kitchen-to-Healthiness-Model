@@ -1,5 +1,3 @@
-# From-Kitchen-to-Healthiness-Model
-DSC80 Project 5
 # From Kitchen to Your Health: Recipe And Healthiness
 Project for DSC 80 at UCSD \
 by Bonnie Li / Nan Huang (b8li@ucsd.edu / n5huang@ucsd.edu)
