@@ -2,7 +2,8 @@
 Project for DSC 80 at UCSD \
 by Bonnie Li / Nan Huang (b8li@ucsd.edu / n5huang@ucsd.edu)
 
-## Introduction
+## Framing the Problem
+
 In this project, we are going to investigate a dataset containing recipes and ratings from food.com. After extracting two raw datasets, one containing recipes and one containing reviews and ratings submitted for the recipes in the first dataset, we merged them and calculated the average ratings for each recipe. Before calculating the average, we replace all the '0' ratings with 'np.nan' to get the accurate average rating. If we don't replace them with 0, those recipe without a rating will not be included. The first row of the resulting dataset will be:
 
 
@@ -18,7 +19,8 @@ A description of each column in both datasets is given below.
 
 
 
-## Cleaning and EDA
+## Baseline Model
+
 ### Data Cleaning
 
 First, we removed all brackets from the "nutrition" column and divided the entire nutrition column into 7 separate columns corresponding to calories, total fat, sugar, sodium, protein, saturated fat, and carbohydrates. Then, we converted all the nutrition columns from string to float.
@@ -68,7 +70,8 @@ The pivot table we generated allows us to see that the proportion of average rat
 |                   7 |         0.125025 |
 
 
-## Assessment of Missingness
+## Final Model
+
 ### NMAR Analysis
 
 According to the table below, 'name', 'description' and 'average_rating' have missing data.
@@ -126,16 +129,5 @@ Also, since the absolute difference between the two group means is 0.2542, which
 Since we obtained a p-value of 0.0132, which is greater than 0.01 significance level, we fail to reject the null hypothesis. The null hypothesis states that the distribution of 'n_ingredients' when 'average_rating' is missing is the same as the distribution of 'n_ingredients' when 'average_rating' is not missing. Therefore, we conclude that the missingness of the 'average_rating' column is not dependent on 'n_ingredients'.
 
 
-## Hypothesis Testing
-Again, our question is: what is the relationship between the level of healthiness and average rating of recipes?
+## Fairness Analysis
 
-Null Hypotheses: The level of healthiness and average rating come from the same distribution. \
-Alternative Hypotheses: The level of healthiness and average rating do not come from the same distribution. 
-
-Since we only have samples, but no information about any population distributions, we are going to conduct a permutation test. \
-Since the dataset is extensive, more confounding variables may affect the result. We need to use a more strict threshold as our significance level. So we use 0.01 as the significance level, representing higher statistical significance.\
-We consider each healthiness level as one group. Since the average ratings for each group are quantitative, we will choose the absolute differences in group means as the test statistic.
-
-The observed differences in the group mean we obtained is 0.342. We ran a permutation test with 1000 repetitions and got a p-value of 0.299, which is much larger than the significance level. We fail to reject the null. Hence, we conclude that the healthiness and average rating may come from the same distribution. As the plot shows below:
-
-<iframe src="assets/Empirical-Distribution-of-the-Absolute-Differences-in-Group-Means.html" width=800 height=600 frameBorder=0></iframe>
