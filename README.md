@@ -11,9 +11,10 @@ Predicting the average rating of a recipe according to minutes, nutritions, n_st
 Regression
 
 We chose the average rating as the response variable because we wanted to further investigate the relationship between the average rating of each recipe and the other variables. (write what metric we choose and why)
+since all the data were generated before the time we extracted them, we knew them at the "time of prediction".
 
 #### Data Cleaning
-First, we removed all brackets from the "nutrition" column and divided the entire nutrition column into 7 separate columns: total fat, sugar, sodium, protein, saturated fat, and carbohydrates. Then, we converted all the nutrition columns from string to float.
+We removed all brackets from the "nutrition" column and divided the entire nutrition column into 7 separate columns: total fat, sugar, sodium, protein, saturated fat, and carbohydrates. Then, we converted all the nutrition columns from string to float.
 
 ## Baseline Model
 
