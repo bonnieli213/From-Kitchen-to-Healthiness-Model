@@ -48,3 +48,11 @@ Second, We double 'n_steps' and 'minutes' because we believe that when "n_steps"
 
 ## Fairness Analysis
 
+Our group X is recipes with minutes more than 35, and our group Y is recipes with minutes less than 35. For evaluation metric, we choose RMSE to evaluate our fairness. 
+
+- Null Hypothesis: Our model is fair. Its precision for recipe with less than 35 minutes and greater than 40 minutes are roughly the same, and any differences are due to random chance.
+
+- Alternative Hypothesis: Our model is unfair. Its precision for recipe with less than 35 minutes is different from those greater than 40 minutes.
+
+The test statistics we choose is the absolute difference of RMSE between two groups. We will use a significance level of 5% and 
+
