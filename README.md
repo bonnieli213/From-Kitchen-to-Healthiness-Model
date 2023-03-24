@@ -27,11 +27,20 @@ We removed all brackets from the "nutrition" column and divided the entire nutri
 
 ## Baseline Model
 
-For our baseline model, we used Decision Tree Regressor with max_depth=2, min_samples_split=5. We used 10 features including minutes,	n_steps, n_ingredients,	calories,	total_fat_(PDV), sugar_(PDV), sodium_(PDV), protein_(PDV), saturated_fat_(PDV), and carbohydrates_(PDV). Minutes,	n_steps, n_ingredients,	and calories are quantitative discrete variables, while total_fat_(PDV), sugar_(PDV), sodium_(PDV), protein_(PDV), saturated_fat_(PDV), and carbohydrates_(PDV) are quantitative continuous variables. We didn't transform any of the features, meaning we use the value as it is. We don't believe our current model is good because we are having a R square of 0.002, which is too low. 
+For our baseline model, we compared Linear Regression and Decision Tree Regressor model's RMSE and R square. It turns out that the linear regression model has RMSE=0.6397 and R^2=-0.0012, and the decision tree regressor has RMSE=0.6391 and R^2=0.0007. Since Decision Tree Regressor has a lower RMSE and higher R^2, we decided to use Decision Tree Regressor. For features, we used 10 features including minutes,	n_steps, n_ingredients,	calories,	total_fat_(PDV), sugar_(PDV), sodium_(PDV), protein_(PDV), saturated_fat_(PDV), and carbohydrates_(PDV). Minutes,	n_steps, n_ingredients,	and calories are quantitative discrete variables, while total_fat_(PDV), sugar_(PDV), sodium_(PDV), protein_(PDV), saturated_fat_(PDV), and carbohydrates_(PDV) are quantitative continuous variables. We didn't transform any of the features, meaning we use the value as it is. We don't believe our current model is good because we are having a R square of 0.0007, which is too low.
 
 
 
 ## Final Model
+We started from conducting grid search with different options of max_depth and min_samples_split to acquire the optimal hyperparameters. It turns out the best max_depth is 2, and the best min_samples_split is also 2. So, in our pl2 model, we first put all the features in because we believe all these features are related to 'average_rating', which is what we are trying to predict. So, we used optimal hyperparameters and put all the features as is to generate the model. It turns out the pl2 has a R^2 of 0.0021 and RMSE of 0.6387, which is better than our baseline model pl1. 
+Conduct GridSearchCV for DecisionTreeRegressor
+ we plan to tune max_depth and min_samples_split and our hyperparameters 
+ If no maximum depth is specified, the nodes are expanded until all leaves are pure, or 
+until all the leaves contain samples smaller than min_samples_split.
+We need to choose the best hyperparameters to avoid underfitting or overfitting
+A higher min_samples_split value prevents the model from learning the possible height 
+Very specific for the particular samples selected for the tree.
+
 
 
 
