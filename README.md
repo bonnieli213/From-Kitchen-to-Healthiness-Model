@@ -10,8 +10,8 @@ Predicting the average rating of a recipe according to minutes, nutritions(split
 #### Type:
 Regression
 
-We chose the average rating as the response variable because we wanted to further investigate the relationship between the average rating of each recipe and the other variables. (write what metric we choose and why)
-since all the data were generated before the time we extracted them, we knew them at the "time of prediction".
+We chose the average rating as the response variable because we wanted to further investigate the relationship between the average rating of each recipe and the other variables. We are using RMSE and R^2 as our metrics because both R squared and RMSE provide valuable information about the performance of a decision tree regressor. R squared can indicate how well the model fits the data overall, while RMSE provides information about the magnitude of errors. By considering both metrics, we can gain a better understanding of how well the model is performing and identify areas for improvement.
+Since all the data were generated before the time we extracted them, we knew them at the "time of prediction".
 
 #### Data Cleaning
 We removed all brackets from the "nutrition" column and divided the entire nutrition column into 7 separate columns: total fat, sugar, sodium, protein, saturated fat, and carbohydrates. Then, we converted all the nutrition columns from string to float, and dropped all the null values.
@@ -33,13 +33,7 @@ For our baseline model, we compared Linear Regression and Decision Tree Regresso
 
 ## Final Model
 We started from conducting grid search with different options of max_depth and min_samples_split to acquire the optimal hyperparameters. It turns out the best max_depth is 2, and the best min_samples_split is also 2. So, in our pl2 model, we first put all the features in because we believe all these features are related to 'average_rating', which is what we are trying to predict. So, we used optimal hyperparameters and put all the features as is to generate the model. It turns out the pl2 has a R^2 of 0.0021 and RMSE of 0.6387, which is better than our baseline model pl1. 
-Conduct GridSearchCV for DecisionTreeRegressor
- we plan to tune max_depth and min_samples_split and our hyperparameters 
- If no maximum depth is specified, the nodes are expanded until all leaves are pure, or 
-until all the leaves contain samples smaller than min_samples_split.
-We need to choose the best hyperparameters to avoid underfitting or overfitting
-A higher min_samples_split value prevents the model from learning the possible height 
-Very specific for the particular samples selected for the tree.
+
 
 
 
