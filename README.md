@@ -5,7 +5,7 @@ by Bonnie Li / Nan Huang (b8li@ucsd.edu / n5huang@ucsd.edu)
 ## Framing the Problem
 
 #### Prediction Problem: 
-Predicting the average rating of a recipe according to minutes, nutritions, n_steps, and n_ingredients. 
+Predicting the average rating of a recipe according to minutes, nutritions(splitted), n_steps, and n_ingredients. 
 
 #### Type:
 Regression
@@ -14,11 +14,26 @@ We chose the average rating as the response variable because we wanted to furthe
 since all the data were generated before the time we extracted them, we knew them at the "time of prediction".
 
 #### Data Cleaning
-We removed all brackets from the "nutrition" column and divided the entire nutrition column into 7 separate columns: total fat, sugar, sodium, protein, saturated fat, and carbohydrates. Then, we converted all the nutrition columns from string to float.
+We removed all brackets from the "nutrition" column and divided the entire nutrition column into 7 separate columns: total fat, sugar, sodium, protein, saturated fat, and carbohydrates. Then, we converted all the nutrition columns from string to float, and dropped all the null values.
+
+|   minutes |   n_steps |   n_ingredients |   calories |   total_fat_(PDV) |   sugar_(PDV) |   sodium_(PDV) |   protein_(PDV) |   saturated_fat_(PDV) |   carbohydrates_(PDV) |   average_rating |
+|----------:|----------:|----------------:|-----------:|------------------:|--------------:|---------------:|----------------:|----------------------:|----------------------:|-----------------:|
+|        40 |        10 |               9 |      138.4 |                10 |            50 |              3 |               3 |                    19 |                     6 |                4 |
+|        45 |        12 |              11 |      595.1 |                46 |           211 |             22 |              13 |                    51 |                    26 |                5 |
+|        40 |         6 |               9 |      194.8 |                20 |             6 |             32 |              22 |                    36 |                     3 |                5 |
+|       120 |         7 |               7 |      878.3 |                63 |           326 |             13 |              20 |                   123 |                    39 |                5 |
+|        90 |        17 |              13 |      267   |                30 |            12 |             12 |              29 |                    48 |                     2 |                5 |
+
 
 ## Baseline Model
 
-we use Linear Regression to build our baseline model with 10 features, including minutes,	n_steps, n_ingredients,	calories,	total_fat_(PDV), sugar_(PDV), sodium_(PDV), protein_(PDV), saturated_fat_(PDV), and carbohydrates_(PDV). Minutes,	n_steps, n_ingredients,	and calories are quantitative discrete variables, while total_fat_(PDV), sugar_(PDV), sodium_(PDV), protein_(PDV), saturated_fat_(PDV), and carbohydrates_(PDV) are quantitative continuous variables. We don't believe our current model is good, so we haven't performed any transformer and our performance metrics is low. (performance metrics missing)
+For our baseline model, we used Decision Tree Regressor with max_depth=2, min_samples_split=5. We used 10 features including minutes,	n_steps, n_ingredients,	calories,	total_fat_(PDV), sugar_(PDV), sodium_(PDV), protein_(PDV), saturated_fat_(PDV), and carbohydrates_(PDV). Minutes,	n_steps, n_ingredients,	and calories are quantitative discrete variables, while total_fat_(PDV), sugar_(PDV), sodium_(PDV), protein_(PDV), saturated_fat_(PDV), and carbohydrates_(PDV) are quantitative continuous variables. We didn't transform any of the features, meaning we use the value as it is. We don't believe our current model is good because we are having a R square of 0.002, which is too low. 
+
+
+
+## Final Model
+
+
 
 
 ### Univariate Analysis
