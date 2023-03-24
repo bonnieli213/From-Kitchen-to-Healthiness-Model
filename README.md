@@ -40,6 +40,7 @@ First, after observing the distribution for sugar_(PDV), we found out their rela
 
 <iframe src="assets/sugar_(PDV)-vs-proportional-average-rating.html" width=800 height=600 frameBorder=0></iframe>
 
+
 Therefore we decided to apply np.sqrt to it. So does 'calories','total_fat_(PDV)', 'sodium_(PDV)','protein_(PDV)','saturated_fat_(PDV)','carbohydrates_(PDV)'.
 
 Second, We double 'n_steps' and 'minutes' because we believe that when "n_steps" and "minutes" are larger, the recipe is more complex, so its average rating is worse, so we want to double these two features to add their weights. 
