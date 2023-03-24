@@ -54,6 +54,5 @@ Our group X is recipes with minutes more than 35, and our group Y is recipes wit
 
 - Alternative Hypothesis: Our model is unfair. Its precision for recipe with less than 35 minutes is different from those greater than 40 minutes.
 
-The test statistics we chose is the absolute difference of RMSE between two groups and we used a significance level of 5%.
-After conducting the permutation test, we get a p-value of (), which is () than our significance level 5%, so we () the null. The conclusion is 
+The test statistics we chose is the absolute difference of RMSE between two groups and our observed statistics is 0.0390 .We used a significance level of 5%. After conducting the permutation test, we get a p-value of 0.0, which is smaller than our significance level 5%, so we reject the null. The conclusion is that our model may not be fair when predicting the average ratings of recipes greater than 35 minutes and recipes less than 35 minutes.
 
