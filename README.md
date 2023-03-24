@@ -38,7 +38,7 @@ However, we still want to improve our model because the R^2 is too low. So, we d
 
 First, after observing the distribution for sugar_(PDV), we found out their relationship with average_rating may be: average_rating = 1/ sugar_(PDV): 
 
-<iframe src="assets/healthiness-level-distribution.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/sugar_(PDV)-vs-proportional-average-rating.html" width=800 height=600 frameBorder=0></iframe>
 
 Therefore we decided to apply np.sqrt to it. So does 'calories','total_fat_(PDV)', 'sodium_(PDV)','protein_(PDV)','saturated_fat_(PDV)','carbohydrates_(PDV)'.
 
