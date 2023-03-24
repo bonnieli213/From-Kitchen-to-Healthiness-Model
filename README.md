@@ -32,7 +32,7 @@ For our baseline model, we compared Linear Regression and Decision Tree Regresso
 
 
 ## Final Model
-We started from conducting grid search with different options of max_depth and min_samples_split to acquire the optimal hyperparameters. It turns out the best max_depth is 2, and the best min_samples_split is also 2. So, in our pl2 model, we first put all the features in because we believe all these features are related to 'average_rating', which is what we are trying to predict. So, we used optimal hyperparameters and put all the features as is to generate the model. It turns out the model has a R^2 of 0.0021 and RMSE of 0.6387, which is better than our baseline model. 
+We started from conducting grid search with different options of max_depth and min_samples_split to acquire the optimal hyperparameters. It turns out the best max_depth is 2, and the best min_samples_split is also 2. So, in our second version model, we first put all the features in because we believe all these features are related to 'average_rating'. For example, people might tend to rate lower for recipes with bigger 'minutes','n_steps', and 'n_ingredients' because they might think the recipe is too complicated. Or people might prefer certain recipes with certain types of ingredients. So, we used optimal hyperparameters and put all the features as is to generate the model. It turns out the model has a R^2 of 0.0021 and RMSE of 0.6387, which is better than our baseline model. 
 
 However, we still want to improve our model because the R^2 is too low. So, we decided to tranform some of the columns. 
 
